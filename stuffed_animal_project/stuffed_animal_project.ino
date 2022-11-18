@@ -42,11 +42,11 @@ void loop() {
     mappedValue = 255;
 
   if (mappedValue<=85)
-    rgbFunction(mappedValue, 0, 0);
+    rgbFunction(mappedValue, mappedValue/3, 0);
   else if (mappedValue<=170)
-    rgbFunction(0, mappedValue, 0);
+    rgbFunction(mappedValue/3, mappedValue, mappedValue/2);
   else
-    rgbFunction(0, 0, mappedValue);
+    rgbFunction(0, mappedValue/2, mappedValue);
 
   Serial.println(mappedValue);
   delay(100); 
