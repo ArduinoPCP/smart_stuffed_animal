@@ -38,15 +38,15 @@ void loop() {
   mappedValue= map(smoothedVal, MIN_ANALOG_INPUT_VAL, MAX_ANALOG_INPUT_VAL, 0, 255);
   if (mappedValue<=0)
     mappedValue=0;
-  if (mappedValue>=255)
+  if (mappedValue>=255) 
     mappedValue = 255;
 
   if (mappedValue<=85)
-    rgbFunction(mappedValue, mappedValue/3, 0);
+    rgbFunction(255-mappedValue, 255-mappedValue/3, 255-0);
   else if (mappedValue<=170)
-    rgbFunction(mappedValue/3, mappedValue, mappedValue/2);
+    rgbFunction(255-mappedValue/3, 255-mappedValue, 255-mappedValue/2);
   else
-    rgbFunction(0, mappedValue/2, mappedValue);
+    rgbFunction(255-0, 255-mappedValue/2, 255-mappedValue);
 
   Serial.println(mappedValue);
   delay(100); 
